@@ -1,26 +1,9 @@
-const cats = [
-   ["^^", ".", null, 0, false, "", NaN, 2, true, "dasdas", 1],
-   [2, NaN, "", false, "^^", "^^"],
-   [false, ".", 1, 0, "^^", null, "", 2, "dasdas", "^^", NaN, true],
-   ["."],
-   [false, ".", 1, 0, "^^", true, null, "^^", "", NaN, 2, "dasdas"],
-   [false, NaN, 1, 0, ".", "^^"],
-   [null, 1, NaN],
-   [],
-]
+const nameTeam = ['Olivia', 1111, 'Lily', 'Oscar', true, null]
 
-countCats(cats);
-
-function countCats(array) {
-   let count = 0;
-   let newArray = array.flat();
-
-   for (let i = 0; i < newArray.length; i++) {
-      const element = newArray[i];
-      if (element === "^^") {
-         count++;
-      }
-   }
-   console.log(count);
-
-}
+createDreamTeam(nameTeam);
+function createDreamTeam(array) {
+   return array.filter((member) => typeof member === "string")
+   .map((member) => member.trim()[0].toUpperCase())
+   .sort()
+   .join("");
+};
