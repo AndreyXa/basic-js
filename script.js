@@ -1,9 +1,6 @@
-const nameTeam = ['Olivia', 1111, 'Lily', 'Oscar', true, null]
-
-createDreamTeam(nameTeam);
-function createDreamTeam(array) {
-   return array.filter((member) => typeof member === "string")
-   .map((member) => member.trim()[0].toUpperCase())
-   .sort()
-   .join("");
-};
+function calculateHanoi(disksNumber, turnsSpeed ) {
+   const turns = 2 ** disksNumber - 1;
+   const seconds = Math.floor(turns / turnsSpeed * 3600);
+   return {turns, seconds};
+}
+console.log(calculateHanoi(9, 4308));
